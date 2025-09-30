@@ -47,6 +47,8 @@ app.post("/upload-qr", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+app.get("/", (req, res) => {
+  res.send("🚀 QR Uploader is running! Use POST /upload-qr");
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`ImgBB uploader running on port ${PORT}`));
